@@ -1,0 +1,5 @@
+<launch>
+  <!-- Package 및 노드 설정 -->
+  <node pkg="MPCC" type="MPCC" name="MPCC_name" output="screen">
+  </node>
+</launch>

@@ -11,6 +11,16 @@ include_directories(External/matplotlib)
 include_directories(External/Eigen)
 include_directories(External/Json/include)
 
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rospy
+)
+
+include_directories(
+# include
+  ${catkin_INCLUDE_DIRS}
+)
+
 add_executable(MPCC
         main.cpp
         types.cpp
