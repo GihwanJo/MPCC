@@ -16,6 +16,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
 )
 
+catkin_package()
+
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
@@ -48,6 +50,6 @@ add_executable(MPCC
 
 find_package(Python COMPONENTS Development)
 target_include_directories(MPCC PRIVATE ${Python_INCLUDE_DIRS})
-target_link_libraries(MPCC ${Python_LIBRARIES})
+target_link_libraries(MPCC ${Python_LIBRARIES} ${catkin_LIBRARIES})
 
 target_link_libraries(MPCC ${CMAKE_SOURCE_DIR}/External/hpipm/lib/lib/libhpipm.a ${CMAKE_SOURCE_DIR}/External/blasfeo/lib/lib/libblasfeo.a m)
